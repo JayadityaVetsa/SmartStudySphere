@@ -1,12 +1,14 @@
 package com.example.myapplication
 
 import android.os.Bundle
+import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myapplication.databinding.ActivityMainBinding
+import com.google.firebase.database.FirebaseDatabase
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
@@ -30,21 +32,27 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupRecyclerView(){
+        binding.progressBar.visibility = View.GONE
         adapter = QuizListAdapter(quizModelList)
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
         binding.recyclerView.adapter = adapter
     }
 
     private fun getDataFromFirebase(){
+        binding.progressBar.visibility = View.VISIBLE
+        FirebaseDatabase.getInstance().reference
+            .get()
+            .addOnSuccessListener {dataSnapshot ->
+                if(dataSnapshot.exists()){
+                    for(snapshot in dataSnapshot.children){
+                        val quizModel = snapshot.getValue(QuizModel::class.java)
+                        if (quizModel != null) {
+                            quizModelList.add(quizModel)
+                        }
+                    }
+                }
+                setupRecyclerView()
+            }
 
-        val listQuestionModel = mutableListOf<QuestionModel>()
-        listQuestionModel.add(QuestionModel("What is andriod?", mutableListOf("Language", "OS", "Product", "None"), "OS"))
-        listQuestionModel.add(QuestionModel("Who owns andriod?", mutableListOf("Apple", "Google", "Samsung", "Microsoft"), "Google"))
-        listQuestionModel.add(QuestionModel("Which assistant andriod uses?", mutableListOf("Siri", "Cortana", "Google Assistant", "Alexa"), "Google Assistant"))
-
-        quizModelList.add(QuizModel("1", "Programming", "All the basic programming", "10", listQuestionModel))
-//        quizModelList.add(QuizModel("2", "Computer", "All the computer questions", "20"))
-//        quizModelList.add(QuizModel("3", "Geography", "Boost your geographic knowledge", "15"))
-        setupRecyclerView()
     }
 }
