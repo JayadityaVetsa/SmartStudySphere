@@ -119,7 +119,7 @@ class QuizActivity : AppCompatActivity(),View.OnClickListener {
                 scoreTitle.text = "Congrats! You have passed"
                 scoreTitle.setTextColor(Color.BLUE)
             }else{
-                scoreTitle.text = "Its Ok, Try Agian"
+                scoreTitle.text = "Its Ok, Try Again"
                 scoreTitle.setTextColor(Color.RED)
             }
             scoreSubtitle.text = "$score out of $totalQuestions are correct"
