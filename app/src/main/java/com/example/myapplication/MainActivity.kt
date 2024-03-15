@@ -1,7 +1,9 @@
 package com.example.myapplication
 
+import android.os.Build
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -20,6 +22,12 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        // adding +icon to the button new quiz
+        val mButton = findViewById<Button>(R.id.new_quiz_btn)
+        val mImage = getDrawable(R.drawable.baseline_add_24)
+        mButton.setCompoundDrawablesWithIntrinsicBounds(mImage, null, null, null)
+        //
 
         quizModelList = mutableListOf()
         getDataFromFirebase()

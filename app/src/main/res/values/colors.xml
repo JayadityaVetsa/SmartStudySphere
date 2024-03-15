@@ -6,5 +6,10 @@
     <color name="orange">#FF8F00</color>
     <color name="blue">#1565C0</color>
     <color name="yellow">#FFC801</color>
-    <color name="light_green">#50C878</color>
+    <color name="melon">#FFB4A2</color>
+    <color name="vivid_sky_blue">#23C8FB</color>
+    <color name="light_sea_green">#2EC4B6</color>
+    <color name="ebony">#596157</color>
+    <color name="Icterine">#FFFF82</color>
+    <color name="transparent">#00000000</color>
 </resources>
