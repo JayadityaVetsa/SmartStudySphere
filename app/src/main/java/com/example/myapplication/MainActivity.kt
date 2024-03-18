@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.view.View
@@ -27,6 +28,10 @@ class MainActivity : AppCompatActivity() {
         val mButton = findViewById<Button>(R.id.new_quiz_btn)
         val mImage = getDrawable(R.drawable.baseline_add_24)
         mButton.setCompoundDrawablesWithIntrinsicBounds(mImage, null, null, null)
+        mButton.setOnClickListener {
+            val intent = Intent(this, NewQuizActivity::class.java)
+            startActivity(intent)
+        }
         //
 
         quizModelList = mutableListOf()
