@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/vivid_sky_blue"
+    android:background="@color/blue"
     tools:context=".SignUpActivity">
 
     <LinearLayout
@@ -13,17 +13,21 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="@color/Icterine">
+        android:background="@color/blue">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
-            android:layout_marginBottom="50dp"
+            android:layout_marginBottom="25dp"
             android:gravity="center"
             android:text="Welcome To Smart Study Sphere Sign Up Here"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textStyle="bold"
             android:textSize="26sp"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="125dp"
+            android:src="@drawable/laptop" />
     </LinearLayout>
 
 
@@ -110,7 +114,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
         android:background="@drawable/rounded_corner"
-        android:backgroundTint="@color/melon"
+        android:backgroundTint="@color/vivid_sky_blue"
         android:text="Sign Up"
         android:textColor="@color/black"
         android:textStyle="bold"

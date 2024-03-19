@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/vivid_sky_blue"
+    android:background="@color/blue"
     tools:context=".SignInActivity">
 
     <LinearLayout
@@ -13,18 +13,26 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="@color/Icterine">
+        android:background="@color/blue">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
-            android:layout_marginBottom="50dp"
+            android:layout_marginBottom="10dp"
             android:gravity="center"
             android:text="Welcome To Smart Study Sphere Sign In Here"
-            android:textColor="@color/black"
+            android:textColor="@color/gray"
             android:textStyle="bold"
             android:textSize="26sp"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/open_book" />
+
     </LinearLayout>
+
+
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/emailLayout"
@@ -83,7 +91,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
         android:background="@drawable/rounded_corner"
-        android:backgroundTint="@color/melon"
+        android:backgroundTint="@color/vivid_sky_blue"
         android:text="Sign In"
         android:textColor="@color/black"
         android:textStyle="bold"
